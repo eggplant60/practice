@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS event (
        plu varchar,
        sk varchar);
  
-\COPY event FROM './event.csv' CSV HEADER;
+\COPY event FROM './csv/event.csv' CSV HEADER;
 
 SELECT * FROM event;
 

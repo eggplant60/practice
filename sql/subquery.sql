@@ -1,7 +1,7 @@
 -- CREATE TABLE IF NOT EXISTS test
 --        (date timestamp,
 --         id int);
--- \COPY test FROM './data.csv' CSV HEADER;
+-- \COPY test FROM './csv/data.csv' CSV HEADER;
 -- INSERT INTO test
 --        VALUES ('2019-02-22 00:00:00', 3);
 

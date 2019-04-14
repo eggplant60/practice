@@ -6,5 +6,4 @@ Postgres へのログイン・SQL 実行方法
 
 3. \i <ファイル名>
 
-
 ※ 単に `psql -U naoya -d practice -f <ファイル名>` でもOK

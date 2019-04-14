@@ -1,0 +1,51 @@
+-- -- 準備
+-- DROP TABLE IF EXISTS cfgdsp;
+
+-- CREATE TABLE IF NOT EXISTS cfgdsp (
+--     mailid integer,
+--     date timestamp,
+--     serial varchar,
+--     plu varchar,
+--     var varchar
+-- );
+ 
+-- \COPY cfgdsp FROM './cfgdsp.csv' CSV HEADER;
+
+-- SELECT * FROM cfgdsp;
+
+-- (bound)カーソルの宣言
+BEGIN WORK;
+
+DECLARE
+    disk CURSOR FOR (
+        SELECT date, serial, plu FROM cfgdsp
+    );
+    -- SELECT
+    -- RAISE NOTICE 'Quantity here is %', ;
+-- FETCH disk INTO :date_i, :serial_i, :plu_i;
+-- SELECT date_i, serial_i, plu_i;
+FETCH disk ;
+
+CLOSE disk;
+COMMIT WORK;
+
+-- DROP FUNCTION somefunc
+-- CLOSE disk;
+-- OPEN disk;
+-- CLOSE disk;
+
+-- FETCH disk INTO date_i, serial_i, plu_i;
+-- -- カーソルを開く
+
+
+-- -- ループ内の処理
+-- OPEN disk FOR date, serial, plu FROM cfgdsp;
+--     SELECT :date_i, serial_i, plu_i;
+-- 	-- INSERT INTO event_4w
+-- 	--        SELECT * FROM event e
+-- 	--        WHERE e.date > :date_i
+-- 	--        	       AND e.serial_number = :serial_number_i
+-- 	--        	       AND e.plu = :plu_i
+-- END
+
+
